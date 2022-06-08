@@ -32,3 +32,7 @@ def init_db(url='sqlite://'):
     database.metadata.create_all(bind=engine)
 
     return Session(bind=engine)
+
+
+if __name__ == '__main__':
+    session = init_db()

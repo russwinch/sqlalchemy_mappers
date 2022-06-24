@@ -9,6 +9,7 @@ Each database table is defined with a `Table` object.
 
 <img width="441" alt="image" src="https://user-images.githubusercontent.com/1622811/172561593-0fdc92d0-3862-4a5b-b357-49e354232bcd.png">
 
+Tables can be queried directly using [SQLAlchemy's select function](https://docs.sqlalchemy.org/en/14/tutorial/data_select.html) 
 
 ### Domain Models
 `domain.py`
@@ -21,13 +22,13 @@ Regular python classes containing business logic.
 ### Mapping
 `orm.py`
 
-The domain models are mapped to the respective `Table` using the `map_imperatively` register.
+The domain models are mapped to the respective `Table` using the `map_imperatively` register, enabling all the regular SQLAlchemy ORM features.
 
 <img width="281" alt="image" src="https://user-images.githubusercontent.com/1622811/172561706-78a75689-cfdb-4904-9469-5a4a070c55cc.png">
 
 All columns in the `Table` get automatically created as attributes of the mapped class when `map_imperatively` is called.
 
-Relationships are configured with a dictionary of properties, using the string representation of the class name there is no dependency on either data or domain models.
+Relationships are configured with a dictionary of properties. The string representation of the class names can be used so there is no import dependency on either data or domain models.
 
 <img width="496" alt="image" src="https://user-images.githubusercontent.com/1622811/172561797-7c559066-0f34-43df-95a1-ce293ed61d36.png">
 
